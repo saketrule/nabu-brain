@@ -16,7 +16,7 @@ const Sidebar = ({ onLogout }) => {
       flexDirection: 'column'
     }}>
       <div style={{ marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '20px', letterSpacing: '-0.5px' }}>Nobu Brain</h1>
+        <h1 style={{ fontSize: '20px', letterSpacing: '-0.5px' }}>Nabu Brain</h1>
       </div>
 
       <nav style={{ flex: 1 }}>

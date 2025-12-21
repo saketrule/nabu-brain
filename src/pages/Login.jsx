@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
                 maxWidth: '400px',
                 textAlign: 'center'
             }}>
-                <h1 style={{ marginBottom: '8px', fontSize: '24px' }}>Welcome to Nobu Brain</h1>
+                <h1 style={{ marginBottom: '8px', fontSize: '24px' }}>Welcome to Nabu Brain</h1>
                 <p style={{ color: '#666', marginBottom: '32px' }}>Sign in to manage your digital brain</p>
 
                 <button onClick={onLogin} style={{
