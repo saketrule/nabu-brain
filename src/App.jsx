@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Sidebar from './components/layout/Sidebar'
 import Login from './pages/Login'
 import LinkCard from './components/LinkCard'
 import DragDropUpload from './components/DragDropUpload'
+import MarkdownRenderer from './components/MarkdownRenderer'
 import './App.css'
 
 function App() {
@@ -34,28 +36,35 @@ function App() {
     <div className="layout">
       <Sidebar onLogout={() => setIsAuthenticated(false)} />
       <main className="main-content">
-        <header style={{ marginBottom: '40px' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: 600 }}>My Brain</h2>
-          <p style={{ color: '#666', marginTop: '8px' }}>Manage your digital resources.</p>
-        </header>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <header style={{ marginBottom: '40px' }}>
+                <h2 style={{ fontSize: '28px', fontWeight: 600 }}>My Brain</h2>
+                <p style={{ color: '#666', marginTop: '8px' }}>Manage your digital resources.</p>
+              </header>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '24px',
-          marginBottom: '40px'
-        }}>
-          {links.map(link => (
-            <LinkCard
-              key={link.id}
-              title={link.title}
-              url={link.url}
-              onDelete={() => handleDelete(link.id)}
-            />
-          ))}
-        </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                gap: '24px',
+                marginBottom: '40px'
+              }}>
+                {links.map(link => (
+                  <LinkCard
+                    key={link.id}
+                    title={link.title}
+                    url={link.url}
+                    onDelete={() => handleDelete(link.id)}
+                  />
+                ))}
+              </div>
 
-        <DragDropUpload onUpload={handleUpload} />
+              <DragDropUpload onUpload={handleUpload} />
+            </>
+          } />
+          <Route path="/p/:slug" element={<MarkdownRenderer />} />
+        </Routes>
       </main>
     </div>
   )
