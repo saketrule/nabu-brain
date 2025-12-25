@@ -1,4 +1,4 @@
-const e=`# Project Proposal
+const e=`# Finance proposal Stage 1
 
 ![Project Proposal](/nabu-brain/images/project-proposal/Gemini_Generated_Image_48azd48azd48azd4.png)
 
@@ -25,4 +25,5 @@ To ensure immediate value while building towards a comprehensive system, we will
 2. **Scalable Architecture Design:** A framework that favors generalized data calls over rigid scripts, ensuring the system adapts to new questions (like Sales Performance variance) without requiring a rebuild.
 3. **Strategic Roadmap:** A plan for consolidating these initial tools into a unified dashboard for the Finance team.
 
-We believe this approach balances the need for immediate answers on critical metrics with the long-term goal of a stable, automated insights engine.`;export{e as default};
+We believe this approach balances the need for immediate answers on critical metrics with the long-term goal of a stable, automated insights engine.
+`;export{e as default};
