@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import LinkCard from './components/LinkCard'
 import DragDropUpload from './components/DragDropUpload'
 import MarkdownRenderer from './components/MarkdownRenderer'
+import MiniApps from './pages/MiniApps'
 import './App.css'
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
               <DragDropUpload onUpload={handleUpload} />
             </>
           } />
+          <Route path="/apps" element={<MiniApps />} />
           <Route path="/p/:slug" element={<MarkdownRenderer />} />
         </Routes>
       </main>

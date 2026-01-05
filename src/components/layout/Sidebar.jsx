@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaHome, FaCog, FaSignOutAlt, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaCog, FaSignOutAlt, FaFileAlt, FaTools } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = ({ onLogout }) => {
@@ -56,6 +56,11 @@ const Sidebar = ({ onLogout }) => {
           <li style={{ marginBottom: '8px' }}>
             <Link to="/" style={linkStyle('/')}>
               <FaHome /> Home
+            </Link>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <Link to="/apps" style={linkStyle('/apps')}>
+              <FaTools /> Mini Apps
             </Link>
           </li>
           <li style={{ marginBottom: '8px' }}>
