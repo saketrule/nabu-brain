@@ -1,0 +1,18 @@
+[
+    {
+        "id": "validate-json",
+        "name": "JSON Validator",
+        "description": "Validate and format your JSON string. Returns parsed object or error details.",
+        "webhookUrl": "https://nabusciences.app.n8n.cloud/webhook/validate-json-string",
+        "displayType": "card",
+        "inputFields": [
+            {
+                "name": "jsonString",
+                "label": "JSON String",
+                "type": "textarea",
+                "required": true,
+                "placeholder": "Paste your JSON here to validate..."
+            }
+        ]
+    }
+]
