@@ -78,8 +78,8 @@ const MiniApps = () => {
 
             {/* App Grid */}
             <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                display: 'flex',
+                flexDirection: 'column',
                 gap: '24px',
                 marginBottom: '40px'
             }}>
