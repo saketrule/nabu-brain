@@ -1,4 +1,4 @@
-# Project Proposal
+# Finance proposal Stage 1
 
 ![Project Proposal](/nabu-brain/images/project-proposal/Gemini_Generated_Image_48azd48azd48azd4.png)
 
