@@ -60,7 +60,7 @@ const Sidebar = ({ onLogout }) => {
           </li>
           <li style={{ marginBottom: '8px' }}>
             <Link to="/apps" style={linkStyle('/apps')}>
-              <FaTools /> Mini Apps
+              <FaTools /> Displai Workflows
             </Link>
           </li>
           <li style={{ marginBottom: '8px' }}>

@@ -70,7 +70,7 @@ const MiniApps = () => {
     return (
         <div className="mini-apps-container">
             <header style={{ marginBottom: '40px' }}>
-                <h2 style={{ fontSize: '28px', fontWeight: 600 }}>Mini Apps</h2>
+                <h2 style={{ fontSize: '28px', fontWeight: 600 }}>Displai Workflows</h2>
                 <p style={{ color: '#666', marginTop: '8px' }}>
                     Collection of utilities powered by n8n workflows.
                 </p>
