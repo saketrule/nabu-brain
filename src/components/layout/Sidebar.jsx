@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaHome, FaCog, FaSignOutAlt, FaFileAlt, FaTools } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
-const Sidebar = ({ onLogout }) => {
+const Sidebar = ({ user, onLogout }) => {
   const [pages, setPages] = useState([]);
   const location = useLocation();
 
@@ -82,6 +82,11 @@ const Sidebar = ({ onLogout }) => {
       </nav>
 
       <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
+        {user && (
+          <div style={{ marginBottom: '12px', paddingLeft: '12px', fontSize: '14px', fontWeight: 500, color: '#333' }}>
+            Hello {user.displayName ? user.displayName.split(' ')[0] : 'User'}
+          </div>
+        )}
         <button onClick={onLogout} style={{
           display: 'flex',
           alignItems: 'center',
