@@ -48,7 +48,7 @@ const Sidebar = ({ onLogout }) => {
       flexDirection: 'column'
     }}>
       <div style={{ marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '20px', letterSpacing: '-0.5px' }}>Nabu Brain</h1>
+        <h1 style={{ fontSize: '20px', letterSpacing: '-0.5px' }}>Displai x Nabu Brain</h1>
       </div>
 
       <nav style={{ flex: 1 }}>
@@ -61,11 +61,6 @@ const Sidebar = ({ onLogout }) => {
           <li style={{ marginBottom: '8px' }}>
             <Link to="/apps" style={linkStyle('/apps')}>
               <FaTools /> Displai Workflows
-            </Link>
-          </li>
-          <li style={{ marginBottom: '8px' }}>
-            <Link to="/settings" style={linkStyle('/settings')}>
-              <FaCog /> Settings
             </Link>
           </li>
         </ul>

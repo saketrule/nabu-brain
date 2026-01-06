@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from './firebase'
 import Sidebar from './components/layout/Sidebar'
 import Login from './pages/Login'
 import LinkCard from './components/LinkCard'
@@ -9,7 +11,8 @@ import MiniApps from './pages/MiniApps'
 import './App.css'
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [links, setLinks] = useState([
     { id: 1, title: 'Google', url: 'https://google.com' },
     { id: 2, title: 'GitHub', url: 'https://github.com' },
@@ -17,9 +20,13 @@ function App() {
     { id: 4, title: 'Figma', url: 'https://figma.com' },
   ]);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleDelete = (id) => {
     setLinks(links.filter(link => link.id !== id));
@@ -29,19 +36,23 @@ function App() {
     setLinks([...links, newLink]);
   };
 
-  if (!isAuthenticated) {
-    return <Login onLogin={handleLogin} />;
+  if (loading) {
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
+  }
+
+  if (!user) {
+    return <Login />;
   }
 
   return (
     <div className="layout">
-      <Sidebar onLogout={() => setIsAuthenticated(false)} />
+      <Sidebar user={user} onLogout={() => auth.signOut()} />
       <main className="main-content">
         <Routes>
           <Route path="/" element={
             <>
               <header style={{ marginBottom: '40px' }}>
-                <h2 style={{ fontSize: '28px', fontWeight: 600 }}>My Brain</h2>
+                <h2 style={{ fontSize: '28px', fontWeight: 600 }}>Displai x Nabu Brain</h2>
                 <p style={{ color: '#666', marginTop: '8px' }}>Manage your digital resources.</p>
               </header>
 
